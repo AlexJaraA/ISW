@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        body {background: url("../static/images/Fondo2.jpg") center fixed; background-size: cover}
+        div {border: #000000 5px solid; padding: 25px; margin: 50px}
+        label {width: 17%}
+        input[type=number]:focus {background-color: #f2f2f2}
+    </style>
+</head>
+
+<body>
+    <h1 style="color:rgb(0,0,0); border: 5px solid #2b90ff; text-align: center">Realice su Consulta</h1>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

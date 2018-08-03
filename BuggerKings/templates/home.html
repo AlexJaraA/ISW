@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Burger Kings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box; font-family: Arial, Helvetica, sans-serif}
+        body {background: url("../static/images/acciones.jpg") no-repeat fixed center; background-size: 70%;
+            font-family: Arial, Helvetica, sans-serif}
+
+        /* Style the top navigation bar */
+        .topnav {overflow: hidden; margin-left: 10%; margin-right: 10%}
+
+        /* Style the topnav links */
+        .topnav a {float: left; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none}
+
+        /* Change color on hover (Fondo cuando cursor pasa por encima)*/
+        .topnav a:hover {background-color: #44dd60; color: black}
+
+        /* Style the content */
+        .content {height: 200px; position: center; margin-left: 20%; margin-right: 20%} /* Should be removed. Only for demonstration */
+
+        /* Style the footer */
+        .footer {background-color: #333; left: 0; bottom: 0; position: fixed; width: 100%; height: 5%}
+
+        .button {text-decoration: none; padding: 10px; font-weight: 600; font-size: 20px; color: #ffffff;
+            background-color: #44dd60; border-radius: 15px; border: 2px solid #44dd60; position: fixed; left: 40% }
+
+        .button:hover{background-color: white; color: #44dd60; border-radius: 15px; border: 2px solid white}
+
+        .content2{background-color: rgba(200,200,200,0.5); height: 120px; width: 900px; padding-top: 5px}
+    </style>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="http://localhost:8000/">Predicción</a>
+</div>
+
+<div class="content">
+  <h2 style="text-align: center; color: white; border: black; font-size: 40px; text-shadow: 3px 2px black"><br>
+      Bienvenido a Bugger Kings's Consult</h2><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class = "content2">
+        <p style="text-align: center; color: #000000; font-size: 20px;font-family: sans-serif;">
+      Si esta pensando en comprar/vender acciones y tiene preocupaciones sobre si su saldo final será positivo, nosotros podemos ayudar en este ámbito,
+      le ofrecemos una predicción del costo de aquella acción en un tiempo que usted eliga!</p><br>
+    <a class="button" href="http://localhost:8000/">¡Haz una predicción aquí!</a>
+    </div>
+</div>
+
+<div class="footer">
+  <p style="color: white; float: right; padding-right: 30px"> Bugger Kings</p>
+</div>
+
+</body>
+</html>
