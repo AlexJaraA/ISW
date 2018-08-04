@@ -1,14 +1,14 @@
+from . import prueba
 import time
 import math as m
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from . import prueba
-
+import os
 
 def get_symbols():
-    dataframe = pd.read_csv("C:/Users/alexj/Desktop/Andruix/USM/2018-1/INF225 Ing. Software/"
-                            "BuggerKings/funcs/csv/companylist.csv")
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    dataframe = pd.read_csv(BASE_DIR + "/funcs/csv/companylist.csv")
     dataframe = dataframe[['Symbol', 'Name']]
     values = list()
 
@@ -73,15 +73,16 @@ def save_plot(x_axis, y_axis, symbol):
     plt.xlabel('Time [Year]')
     plt.ylabel('Action Value [Dollars]')
     plt.grid(True)
-
-    plt.savefig('C:/Users/alexj/Desktop/Andruix/USM/2018-1/INF225 Ing. Software/BuggerKings/static/images/'
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    plt.savefig(BASE_DIR + '/static/images/'
                 + symbol + '.png')
     plt.close()
 
 
 def main(symbol, exercise_time, price, riskfree, type_opt):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     prueba.download_quotes(symbol, exercise_time)
-    data_frame = icsv('C:/Users/alexj/Desktop/Andruix/USM/2018-1/INF225 Ing. Software/BuggerKings/funcs/csv/'
+    data_frame = icsv(BASE_DIR + '/funcs/csv/'
                       + symbol + '.csv')
     volatile = volatility(data_frame)
     y_axis, estimate_gain, estimate_value = iterations(100, 5000, price, riskfree, volatile, exercise_time, type_opt)

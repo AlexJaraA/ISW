@@ -1,5 +1,6 @@
 import re
 import time
+import os
 from datetime import date
 from dateutil.relativedelta import relativedelta
 import requests
@@ -41,7 +42,8 @@ def get_data(symbol, start_date, end_date, cookie, crumb):
     url = "https://query1.finance.yahoo.com/v7/finance/download/%s?period1=%s&period2" \
           "=%s&interval=1d&events=history&crumb=%s" % (symbol, start_date, end_date, crumb)
     response = requests.get(url, cookies=cookie)
-    with open('C:/Users/alexj/Desktop/Andruix/USM/2018-1/INF225 Ing. Software/BuggerKings/funcs/csv/' + filename, 'wb') as handle:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(BASE_DIR + '/funcs/csv/' + filename, 'wb') as handle:
         for block in response.iter_content(1024):
             handle.write(block)
 
